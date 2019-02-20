@@ -1,5 +1,5 @@
 
-const { getFilmsList } = require('../models/app-index-model')
+const { getFilmsList, getTestMock } = require('../models/app-index-model')
 const appHeaderView = require('../views/app-header.html')
 const appMainView = require('../views/app-main.html') 
 
@@ -17,6 +17,9 @@ const render = async () => {
     $('#app #main').html(template({ films: filmsList.movieList }))
 
     $('.loading').addClass('hide')// 显示加载
+
+    let mock = await getTestMock()
+    console.log(mock)
 }
 
 module.exports = { render }

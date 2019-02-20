@@ -2,10 +2,10 @@
 const api = {
     request ({
         url, data, methods
-    }) {
+    }, mock) {
         return $.ajax({
             // url: 'http://m.maoyan.com/ajax/movieOnInfoList?token=',
-            url: '/maoyan' + url,
+            url: (mock ? '' : '/maoyan' ) + url,
             data: data || {},
             methods: methods || 'get',
             success: (res) => {
@@ -15,6 +15,9 @@ const api = {
                 console.log('请求出错了', error)
             }
         }) 
+    },
+    mock (options) {
+        return this.request(options, true)
     }
 }
 
