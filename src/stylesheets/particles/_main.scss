@@ -1,5 +1,29 @@
 
+#main {
+    display: flex;
+    align-items: stretch; 
+}
+
+#app-container {
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-flow: column nowrap;
+    .film-controls {
+        flex-shrink: 0;
+    }
+    .film-list {
+        flex-grow: 1; flex-shrink: 1;
+        width: 100%;
+        overflow: auto;
+    }
+
+}
+
+
 /* 内容顶部控制区域 */
+
+
 
 .film-controls {
     width: 100%; height: 1.2rem;
