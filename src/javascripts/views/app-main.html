@@ -1,0 +1,39 @@
+<main id="app-container">
+        
+    <!-- 内容区域顶部的控制 start -->
+    <div class="film-controls">
+        <div class="film-controls__city">北京</div>
+        <div class="film-controls__types">
+            <div class="film-controls__type-item active">正在热映</div>
+            <div class="film-controls__type-item">即将上映</div>
+        </div>
+        <div class="film-controls__search"><i class="icon icon-wode-copy"></i></div>
+    </div>
+    <!-- 内容区域顶部的控制 end -->
+    
+    <!-- 内容影片列表 start -->
+    <div class="film-list">
+        {{#each films}}
+        <div class="film-list__item">
+            <div class="film-list__item-img">
+                <img width="100%" height="100%" src="https://p1.meituan.net/128.180/movie/616cd50a33550a9225ac781e52d14ae54967551.jpg" alt="">
+            </div>
+            <div class="film-list__item-info">
+                <div class="film-list__item-title">
+                    <h1>{{nm}}</h1>
+                    <span class="film-list__item-desc-img max"></span>
+                </div>
+                <div class="film-list__item-grade">观众评 <span>8.8</span></div>
+                <div class="film-list__item-actor">主演: 罗莎·萨拉查,克里斯托弗·沃尔兹,基恩·约翰逊</div>
+                <div class="film-list__item-count">今天<span>222</span>家影院放映<span>222</span>场</div>
+            </div>
+            <div class="film-list__item-btn">
+               <button class="film-list__btn film-list__btn--buy active">购票</button> 
+               <button class="film-list__btn film-list__btn--pre">预售</button> 
+            </div>
+        </div>
+        {{/each}}
+
+    </div>
+    <!-- 内容影片列表 end -->
+</main>
