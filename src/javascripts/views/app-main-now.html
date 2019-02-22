@@ -1,0 +1,25 @@
+<!-- 内容影片列表 start -->
+<div class="film-list">
+    {{#each films}}
+    <div class="film-list__item">
+        <div class="film-list__item-img">
+            <img width="100%" height="100%" src="{{img}}" alt="">
+        </div>
+        <div class="film-list__item-info">
+            <div class="film-list__item-title">
+                <h1>{{nm}}</h1>
+                <span class="film-list__item-desc-img max"></span>
+            </div>
+            <div class="film-list__item-grade">{{{situation}}}</div>
+            <div class="film-list__item-actor">主演: {{star}}</div>
+            <div class="film-list__item-count">{{showInfo}}</div>
+        </div>
+        <div class="film-list__item-btn">
+           <button class="film-list__btn film-list__btn--buy active">购票</button> 
+           <button class="film-list__btn film-list__btn--pre">预售</button> 
+        </div>
+    </div>
+    {{/each}}
+
+</div>
+<!-- 内容影片列表 end -->

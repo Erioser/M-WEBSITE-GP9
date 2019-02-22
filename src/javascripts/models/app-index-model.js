@@ -3,12 +3,16 @@ const api = require('../api')
 const getFilmsList = () => {
     return api.request({ url: '/ajax/movieOnInfoList?token=' })
 }
+const getComingBanner = () => {
+    return api.mock({ url: 'http://localhost:8000/banner' })
+}
 const getTestMock = () => {
     return api.mock({ url: 'http://localhost:8000/a/aa' })
 }
 module.exports = {
     getFilmsList,
-    getTestMock
+    getTestMock,
+    getComingBanner 
 }
 
 

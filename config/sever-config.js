@@ -14,7 +14,15 @@ const serverConfig = {
             pathRewrite: { // 去掉暗号
                 '^/maoyan': ''
             }
-        })
+        }),
+        
+        proxy('/mz', {
+            target: 'https://m.maizuo.com/',
+            changeOrigin: true,
+            pathRewrite: { // 去掉暗号
+                '^/mz': ''
+            }
+        }),
     ],
     proxies: [
         // { source: '/api', target: '' }

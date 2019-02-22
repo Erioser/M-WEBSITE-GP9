@@ -22,5 +22,8 @@
     "http-proxy-middleware": "^0.19.1",
     "string-loader": "^0.0.1",
     "webpack-stream": "^5.2.1"
+  },
+  "dependencies": {
+    "swiper": "^4.4.6"
   }
 }
