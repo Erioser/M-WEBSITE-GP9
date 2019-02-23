@@ -1,5 +1,10 @@
 @import './normalize';
-
+body {
+    font-size: 14px;
+}
+p {
+    margin: 0; padding: 0;
+}
 * {
     box-sizing: border-box;
 }

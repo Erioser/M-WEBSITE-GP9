@@ -1,3 +1,25 @@
 <div class="coming-recommend">
-    
+    <p class="coming-recommend__title">
+        近期最受期待
+    </p>
+    <div class="coming-recommend__content swiper-container">
+        <div class="swiper-wrapper">
+            {{#each list}}
+            <div class="swiper-slide coming-recommend__item">
+                <div class="coming-recommend__item-img">
+                    <img src="{{img}}" alt="">
+                    <div class="coming-recommend__item-like">
+                        <i class="icon icon-dianying"></i>
+                    </div>
+                    <div class="coming-recommend__item-want">
+                        {{wish}}人想看
+                    </div>    
+                </div>
+                <div class="coming-recommend__item-name line-ellipsis">{{nm}}</div>
+                <div class="coming-recommend__item-date">{{comingTitle}}</div>
+                
+            </div>
+            {{/each}}
+        </div>
+    </div>
 </div>

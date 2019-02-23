@@ -1,6 +1,8 @@
-<!-- 内容影片列表 start -->
-<div class="film-list">
-    {{#each films}}
+<div class="coming-list">
+    {{#each list}}
+    {{#if showDate}}
+        <div class="film-list__date">{{comingTitle}}</div>
+    {{/if}}
     <div class="film-list__item">
         <div class="film-list__item-img">
             <img width="100%" height="100%" src="{{img}}" alt="">
@@ -12,17 +14,15 @@
             </div>
             <div class="film-list__item-grade">{{{situation}}}</div>
             <div class="film-list__item-actor">主演: {{star}}</div>
-            <div class="film-list__item-count">{{showInfo}}</div>
+            <div class="film-list__item-count">{{rt}}上映</div>
         </div>
         <div class="film-list__item-btn">
-            {{#if preShow}}
+            {{#if pre}}
                 <button class="film-list__btn film-list__btn--pre active">预售</button>                
             {{else}}
-                <button class="film-list__btn film-list__btn--buy active">购票</button> 
+                <button class="film-list__btn film-list__btn--buy active">想看</button> 
             {{/if}}
         </div>
     </div>
     {{/each}}
-
 </div>
-<!-- 内容影片列表 end -->

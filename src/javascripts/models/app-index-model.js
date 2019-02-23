@@ -1,10 +1,21 @@
 const api = require('../api')
-// 获取电影
+// 获取正在热映电影
 const getFilmsList = () => {
     return api.request({ url: '/ajax/movieOnInfoList?token=' })
 }
+// 即将上映推荐
+const getComingRecommend = () => {
+    return api.request({ url: '/ajax/mostExpected?ci=1&limit=10&offset=0&token=' })
+}
+// 即将上映轮播
 const getComingBanner = () => {
     return api.mock({ url: 'http://localhost:8000/banner' })
+}
+// 即将上映列表
+const getComingList = (movieIds) => {
+    return api.request({ url: `/ajax/${movieIds ? 'moreComingList' : 'comingList'}?ci=1&token=&limit=10`, data: {
+        movieIds
+    }})
 }
 const getTestMock = () => {
     return api.mock({ url: 'http://localhost:8000/a/aa' })
@@ -12,7 +23,9 @@ const getTestMock = () => {
 module.exports = {
     getFilmsList,
     getTestMock,
-    getComingBanner 
+    getComingBanner,
+    getComingRecommend,
+    getComingList
 }
 
 
