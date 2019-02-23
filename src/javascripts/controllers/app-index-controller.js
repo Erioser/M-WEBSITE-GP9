@@ -4,6 +4,12 @@ const appIndexNowController = require('./app-index-now-controller')
 const appIndexComingController = require('./app-index-coming-controller')
 const appMainView = require('../views/app-main.html') 
 
+const Store = require('../store')
+
+const { 
+    getPositionModel
+} = require('../models/app-index-model')
+
 let targetType = 'coming' // 当前的显示类型
 const render = async () => {
 
@@ -26,6 +32,21 @@ const render = async () => {
 
     $('.loading').addClass('hide')// 显示加载
 
+    // 订阅城市变化，不管任何时刻只要城市变化
+    new Store().subscribe((state) => {
+        $('.film-controls__city').html(state.city)
+    })
+
+    
+
+    // 定位城市
+    let positionInfo = await getPositionModel()
+    console.log(positionInfo)
+    new Store().setState({ city: positionInfo.regeocode.addressComponent.province })
+    
+
+    
+   
    
 }
 // 切换类型的按钮处理

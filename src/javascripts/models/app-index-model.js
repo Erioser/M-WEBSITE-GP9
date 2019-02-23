@@ -1,4 +1,7 @@
 const api = require('../api')
+const {
+    getPosition
+} = require('../util')
 // 获取正在热映电影
 const getFilmsList = () => {
     return api.request({ url: '/ajax/movieOnInfoList?token=' })
@@ -20,12 +23,27 @@ const getComingList = (movieIds) => {
 const getTestMock = () => {
     return api.mock({ url: 'http://localhost:8000/a/aa' })
 }
+
+
+
+// 获取定位信息
+
+const getPositionModel = () => {
+    
+    return getPosition()
+}
+
+
+
+
+
 module.exports = {
     getFilmsList,
     getTestMock,
     getComingBanner,
     getComingRecommend,
-    getComingList
+    getComingList,
+    getPositionModel
 }
 
 
